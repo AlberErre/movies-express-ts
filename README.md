@@ -1,2 +1,20 @@
-# express-movies-API
-Simple visual REST API, using NodeJS &amp; Express, to manage movies (GET, POST, PUT, DELETE)
+# movies-express-js 💻 (REST API) 
+Simple movie REST API using NodeJS & Express 🔥
+
+```
+GET 
+POST 
+PUT 
+DELETE
+```
+
+## QuickStart
+```
+npm install
+npm run start 
+``` 
+
+## Nodemon Server
+```
+npm run dev 
+``` 
