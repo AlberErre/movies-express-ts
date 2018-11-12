@@ -24,7 +24,7 @@ app.get("/:id", (req, res) => {
 });
 
 app.post("/movies", (req, res) => {
-    if (bodyIsEmpty(req.body)) {
+    if (!bodyIsEmpty(req.body)) {
         res.status(400).send("Oops, you have to pass something as Body");
     } else {
         const newMovie = req.body;
