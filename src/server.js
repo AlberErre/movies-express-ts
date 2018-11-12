@@ -28,6 +28,17 @@ app.post("/movies", (req, res) => {
     }
 });
 
+app.put("/movies/:id", (req, res) => {
+    const newInfo = req.body;
+    let movieID = req.params.id;
+    let MovieToUpdate = movies.find(movie => movie.id == movieID);
+
+    res.json({
+        message: `Movie ${MovieToUpdate.id} has been updated.`,
+        MovieToUpdate
+    });
+});
+
 app.delete("/movies/:id", (req, res) => {
     if (!idExists(movies, req.params.id)) {
         res.status(400).send("Oops, that ID does not exist.");
