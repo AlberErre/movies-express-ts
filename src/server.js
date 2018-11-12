@@ -28,6 +28,20 @@ app.post("/movies", (req, res) => {
     }
 });
 
+app.delete("/movies/:id", (req, res) => {
+    if (!idExists(movies, req.params.id)) {
+        res.status(400).send("Oops, that ID does not exist.");
+    } else {
+        movies.find( movieToDelete => {
+            if (movieToDelete.id == req.params.id) {
+                // remove from movies array (using lodash)
+                _.pull(movies, movieToDelete);
+                res.send(`Movie ${movieToDelete.id} has been deleted.`);
+            }
+        });
+    }
+});
+
 // Listen
 app.listen(port, () => {
     console.log("Express running on port 3001.");
