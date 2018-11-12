@@ -1,18 +1,14 @@
 const express = require("express");
-const router = express.Router();
 const _ = require("lodash");
+const router = express.Router();
+const magic = require(".whereMagicHappens");
 
 // Utils
 const bodyIsEmpty = require("../../utils/bodyIsEmpty");
 //const Movie = require("../../models/movie.model");
 const idExists = require("../../utils/idExists");
 
-// Movies Data
-let movies = require("./data/movies");
-
-router.get("/", (req, res) => {
-    res.json(movies);
-});
+router.get("/", (req, res) => magic.getMovies);
 
 router.get("/:id", (req, res) => {
     movies.find(selectedMovie => {
