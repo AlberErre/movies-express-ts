@@ -5,11 +5,22 @@ const idExists = require("./utils/idExists");
 const _ = require("lodash");
 
 // Movies Data
-const movies = require("./data/movies");
+let movies = require("./data/movies");
+console.log(movies);
 
 // API
 app.get("/", (req, res) => {
     res.json(movies);
+});
+
+app.get("/:id", (req, res) => {
+    movies.find( selectedMovie => {
+        if(selectedMovie.id == req.params.id) {
+            res.json(selectedMovie); 
+        }
+    });
+
+    res.status(400).send(`Oops, ID: ${req.params.id} hasn't have any movie assigned.`);
 });
 
 app.post("/movies", (req, res) => {
