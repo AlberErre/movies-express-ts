@@ -1,0 +1,25 @@
+{
+  "name": "express-movies-api-albererre",
+  "version": "1.0.0",
+  "description": "REST API to manage movies",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlberErre/express-movies-API.git"
+  },
+  "keywords": [
+    "API",
+    "REST",
+    "Express",
+    "movies"
+  ],
+  "author": "Alber Erre",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlberErre/express-movies-API/issues"
+  },
+  "homepage": "https://github.com/AlberErre/express-movies-API#readme"
+}
