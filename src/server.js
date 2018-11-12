@@ -1,11 +1,11 @@
-const { app, port } = require("config/express");
+const { app, port } = require("./config/express");
 //const Movie = require("models/movie.model");
-const bodyIsEmpty = require("utils/bodyIsEmpty");
-const idExists = require("utils/idExists");
+const bodyIsEmpty = require("./utils/bodyIsEmpty");
+const idExists = require("./utils/idExists");
 const _ = require("lodash");
 
 // Movies Data
-const movies = require("data/movies");
+const movies = require("./data/movies");
 
 // API
 app.get("/", (req, res) => {
