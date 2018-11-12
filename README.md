@@ -1,4 +1,4 @@
-# movies-express-js 💻 (REST API) 
+# movies-express-js 💻
 Simple movie REST API using NodeJS & Express 🔥
 
 ```
