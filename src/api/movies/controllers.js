@@ -61,6 +61,21 @@ function deleteMovie(req, res) {
     }
 }
 
+function getLikes(req, res) {
+    console.log(res);
+    res.json(movies);
+}
+
+function likeMovie(req, res) {
+    console.log(res);
+    res.json(movies);
+}
+
+function dislikeMovie(req, res) {
+    console.log(res);
+    res.json(movies);
+}
+
 module.exports = {
     getMovie,
     getMovies,
