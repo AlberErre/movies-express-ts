@@ -7,6 +7,7 @@ let movies = require("../../data/movies");
 
 // Movies API Methods
 function getMovies(req, res) {
+    console.log(res);
     res.json(movies);
 }
 
