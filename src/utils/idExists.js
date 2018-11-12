@@ -9,4 +9,4 @@ function idExists(array, id) {
     return false;
 }
 
-module.exports = { idExists };
+module.exports = idExists;

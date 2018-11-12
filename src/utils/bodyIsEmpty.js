@@ -10,4 +10,4 @@ function bodyIsEmpty(body) {
     }
 }
 
-module.exports = { bodyIsEmpty };
+module.exports = bodyIsEmpty;
