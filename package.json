@@ -4,7 +4,8 @@
   "description": "REST API to manage movies",
   "main": "src/server.js",
   "scripts": {
-    "test": "test"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,12 @@
   "bugs": {
     "url": "https://github.com/AlberErre/express-movies-API/issues"
   },
-  "homepage": "https://github.com/AlberErre/express-movies-API#readme"
+  "homepage": "https://github.com/AlberErre/express-movies-API#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  }
 }
