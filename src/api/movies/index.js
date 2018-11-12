@@ -1,12 +1,11 @@
 const express = require("express");
-const _ = require("lodash");
 const router = express.Router();
-const magic = require("./whereMagicHappens");
+const controller = require("./controllers");
 
-router.get("/", (req, res) => magic.getMovies(req, res));
-router.get("/:id", (req, res) => magic.getMovie(req, res));
-router.post("/", (req, res) => magic.addMovie(req, res));
-router.put("/:id", (req, res) => magic.updateMovie(req, res));
-router.delete("/:id", (req, res) => magic.deleteMovie(req, res));
+router.get("/", (req, res) => controller.getMovies(req, res));
+router.get("/:id", (req, res) => controller.getMovie(req, res));
+router.post("/", (req, res) => controller.addMovie(req, res));
+router.put("/:id", (req, res) => controller.updateMovie(req, res));
+router.delete("/:id", (req, res) => controller.deleteMovie(req, res));
 
 module.exports = router;

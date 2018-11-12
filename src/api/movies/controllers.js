@@ -1,11 +1,8 @@
-// Utils
+const _ = require("lodash");
 const bodyIsEmpty = require("../../utils/bodyIsEmpty");
 const idExists = require("../../utils/idExists");
-
-// Movies Data
 let movies = require("../../data/movies");
 
-// Movies API Methods
 function getMovies(req, res) {
     console.log(res);
     res.json(movies);
@@ -64,4 +61,13 @@ function deleteMovie(req, res) {
     }
 }
 
-module.exports = { getMovie, getMovies, addMovie, updateMovie, deleteMovie };
+module.exports = {
+    getMovie,
+    getMovies,
+    addMovie,
+    updateMovie,
+    deleteMovie,
+    getLikes,
+    likeMovie,
+    dislikeMovie
+};
