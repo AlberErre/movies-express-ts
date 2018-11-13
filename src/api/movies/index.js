@@ -75,7 +75,32 @@ router.delete("/:id", (req, res) => {
     }
 });
 
-router.put("/likes/:id", (req, res) => controller.likeMovie(req, res));
-router.delete("/likes/:id", (req, res) => controller.dislikeMovie(req, res));
+router.put('/likes/:id', (req, res) => {
+    let result = controller.likeMovie(req.params.id);
+
+    if (result === false) {
+        res.status(400).send({
+            message: "Sorry, you cannot like a movie that does not exist."
+        });
+    } else {
+        res.status(200).send({
+            message: `Congrats!, you have liked movie ${req.params.id}).`
+        });
+    }
+});
+
+router.delete('/likes/:id', (req, res) => {
+    let result = controller.dislikeMovie(req.params.id);
+
+    if (result === false) {
+        res.status(400).send({
+            message: "Sorry, you cannot dislike a movie that does not exist."
+        });
+    } else {
+        res.status(200).send({
+            message: `You have disliked movie ${req.params.id}).`
+        });
+    }
+});
 
 module.exports = router;

@@ -52,9 +52,24 @@ function likeMovie(req, res) {
     res.json(movies);
 }
 
-function dislikeMovie(req, res) {
-    console.log(res);
-    res.json(movies);
+function likeMovie(id) {
+    if (!idExists(movies, id)) {
+        return false;
+    } else {
+        let likedMovie = movies.find(movie => movie.id === id);
+        likedMovie.like = true;
+        return true;
+    }
+}
+
+function dislikeMovie(id) {
+    if (!idExists(movies, id)) {
+        return false;
+    } else {
+        let dislikedMovie = movies.find(movie => movie.id === id);
+        dislikedMovie.like = false;
+        return true;
+    }
 }
 
 module.exports = {
