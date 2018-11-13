@@ -25,6 +25,7 @@
   "homepage": "https://github.com/AlberErre/express-movies-API#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "lodash": "^4.17.11",
     "morgan": "^1.9.1"
   },
