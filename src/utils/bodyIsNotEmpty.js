@@ -1,4 +1,4 @@
-function bodyIsEmpty(body) {
+function bodyIsNotEmpty(body) {
     if (
         (body !== null) |
         (body !== undefined) |
@@ -10,4 +10,4 @@ function bodyIsEmpty(body) {
     }
 }
 
-module.exports = bodyIsEmpty;
+module.exports = bodyIsNotEmpty;
