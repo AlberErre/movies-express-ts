@@ -43,9 +43,8 @@ function deleteMovie(id) {
     }
 }
 
-function getLikes(req, res) {
-    console.log(res);
-    res.json(movies);
+function getLikes() {
+    return movies.filter(movie => movie.like === true);
 }
 
 function likeMovie(req, res) {
