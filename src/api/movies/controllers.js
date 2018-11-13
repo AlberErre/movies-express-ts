@@ -21,16 +21,18 @@ function addMovie(newMovie) {
     }
 }
 
-function updateMovie(req, res) {
-    const newInfo = req.body;
-    let movieID = req.params.id;
-    let MovieToUpdate = movies.find(movie => movie.id == movieID);
-
-    res.json({
-        message: `Movie ${MovieToUpdate.id} has been updated.`,
-        MovieToUpdate
-    });
+function updateMovie(id, movieToUpdate) {
+    if (bodyIsNotEmpty(movieToUpdate)) {
+        let moviePosition = movies.findIndex(movie => movie.id === id);
+        if (moviePosition >= 0) {
+          movies[moviePosition] = movieToUpdate;
+        }
+        return movies[moviePosition];
+    } else {
+        return false;
+    }
 }
+
 
 function deleteMovie(req, res) {
     if (!idExists(movies, req.params.id)) {

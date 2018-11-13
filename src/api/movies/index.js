@@ -34,9 +34,21 @@ router.post("/", (req, res) => {
     }
 });
 
+router.put("/:id", (req, res) => {
+    let updatedMovie = controller.updateMovie(req.params.id, req.body);
 
+    if (updatedMovie === false) {
+        res.status(400).send({
+            message: "Oops, an error has ocurred while updating movie.",
+        });
+    } else {
+        res.json({
+            message: `Movie ${req.params.id} has been updated!`,
+            updatedMovie
+        });
+    }
+});
 
-router.put("/:id", (req, res) => controller.updateMovie(req, res));
 router.delete("/:id", (req, res) => controller.deleteMovie(req, res));
 
 router.get("/like/:id", (req, res) => controller.getLikes(req, res));
