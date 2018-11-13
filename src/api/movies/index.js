@@ -49,7 +49,19 @@ router.put("/:id", (req, res) => {
     }
 });
 
-router.delete("/:id", (req, res) => controller.deleteMovie(req, res));
+router.delete("/:id", (req, res) => {
+    let movieIsDeleted = controller.deleteMovie(req.params.id);
+
+    if (movieIsDeleted === false) {
+        res.status(400).send({
+            message: "Sorry, the movie you're trying to delete does not exist."
+        });
+    } else {
+        res.status(200).send({
+            message: `Movie (id: ${req.params.id}) has been deleted!`,
+        });
+    }
+});
 
 router.get("/like/:id", (req, res) => controller.getLikes(req, res));
 router.put("/like/:id", (req, res) => controller.likeMovie(req, res));

@@ -26,25 +26,20 @@ function updateMovie(id, movieToUpdate) {
         let moviePosition = movies.findIndex(movie => movie.id === id);
         if (moviePosition >= 0) {
           movies[moviePosition] = movieToUpdate;
+          return movies[moviePosition];
         }
-        return movies[moviePosition];
     } else {
         return false;
     }
 }
 
-
-function deleteMovie(req, res) {
-    if (!idExists(movies, req.params.id)) {
-        res.status(400).send("Oops, that ID does not exist.");
+function deleteMovie(id) {
+    if (!idExists(movies, id)) {
+        return false;
     } else {
-        movies.find(movieToDelete => {
-            if (movieToDelete.id == req.params.id) {
-                // remove from movies array (using lodash)
-                _.pull(movies, movieToDelete);
-                res.send(`Movie ${movieToDelete.id} has been deleted.`);
-            }
-        });
+        let movieToDelete = movies.find(movie => movie.id === id);
+        _.pull(movies, movieToDelete);
+        return true;
     }
 }
 
