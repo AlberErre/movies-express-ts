@@ -47,11 +47,6 @@ function getLikes() {
     return movies.filter(movie => movie.like === true);
 }
 
-function likeMovie(req, res) {
-    console.log(res);
-    res.json(movies);
-}
-
 function likeMovie(id) {
     if (!idExists(movies, id)) {
         return false;
