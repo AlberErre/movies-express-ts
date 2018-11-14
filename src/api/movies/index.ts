@@ -36,17 +36,6 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-<<<<<<< HEAD
-	const movieToAdd = controller.bodyToMovie(req.body);
-	if (!movieToAdd) {
-		console.log('as');
-		// res.send({ message: 'Oops, an error has ocurred while adding new movie.', }, 400);
-		// res.send({ message: 'Oops, an error has ocurred while adding new movie.', }, 400);
-		return true;
-	}
-	controller.addMovie(movieToAdd);
-	res.json({ message: 'New Movie added!', movieToAdd });
-=======
   const movieToAdd: Movie = controller.bodyToMovie(req.body);
   if (!movieToAdd) {
     res.send({ message: 'Oops, an error has ocurred while adding new movie.', }, 400);
@@ -54,7 +43,6 @@ router.post('/', (req, res) => {
   }
   controller.addMovie(movieToAdd);
   res.json({ message: 'New Movie added!', movieToAdd });
->>>>>>> upstream/master
 });
 
 router.put('/:id', (req, res) => {
