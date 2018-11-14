@@ -52,7 +52,7 @@ function deleteMovie(idToRemove: string) {
   // }
 }
 
-function getLikes() {
+function getLikes() : Movie[] {
   return movies.filter(movie => movie.like === true);
 }
 
