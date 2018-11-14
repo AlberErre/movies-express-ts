@@ -1,4 +1,4 @@
-import bodyIsNotEmpty from '../../utils/bodyIsNotEmpty';
+import { bodyIsEmpty } from '../../utils/utils';
 import { movies } from '../../data/movies';
 import { pull } from 'lodash';
 import { Movie } from '../../models/model';
@@ -12,18 +12,11 @@ function findMovieById(idToSearch: string) {
 }
 
 export function addMovie(newMovie: Movie) {
-  // if (bodyIsNotEmpty(newMovie)) {
-  //   newMovie.id = `${ movies.length + 1 }`;
-  //   movies.push(newMovie);
-  //   return newMovie;
-  // } else {
-  //   return false;
-  // }
   movies.push(newMovie);
 }
 
 function updateMovie(id, movieToUpdate) {
-  if (bodyIsNotEmpty(movieToUpdate)) {
+  if (bodyIsEmpty(movieToUpdate)) {
     const moviePosition = movies.findIndex(movie => movie.id === id);
     if (moviePosition >= 0) {
       movies[moviePosition] = movieToUpdate;

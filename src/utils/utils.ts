@@ -8,3 +8,10 @@ export function findMovieById(elementsToFind: Movie[], idToSearch: string): bool
     });
     return false;
 }
+
+export function bodyIsEmpty(body) {
+    if (Object.keys(body).length > 0) {
+        return false;
+    }
+    return true;
+}
