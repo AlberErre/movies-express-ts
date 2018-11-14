@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/likes', (req, res) => {
-	let likedMovies: Movie = controller.getLikes();
+	let likedMovies: Movie[] = controller.getLikes();
 
 	if (likedMovies.length > 0) {
 		res.json(likedMovies);
