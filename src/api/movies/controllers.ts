@@ -27,22 +27,19 @@ export function updateMovie(id: string, movieToUpdate: Movie): Movie {
 }
 
 function deleteMovie(idToRemove: string) {
-  const movieToDelete = findMovieById(idToRemove);
+  const movieToDelete: Movie = findMovieById(idToRemove);
   if (movieToDelete) {
     pull(movies, movieToDelete);
   }
-
-  // if (idExists(movies, idToRemove)) {
-  //
-  // }
-  // if (!idExists(movies, idToRemove)) {
-  //     return false;
-  // } else {
-  //     let movieToDelete = movies.find(movie => movie.idToRemove === idToRemove);
-
-  //     return true;
-  // }
 }
+
+function deleteLike(idToRemove: string) {
+  const movieToChange = findMovieById(idToRemove);
+  if (movieToChange.like === true) {
+    movieToChange.like = false;
+  }
+}
+
 
 function getLikes() : Movie[] {
   return movies.filter(movie => movie.like === true);
