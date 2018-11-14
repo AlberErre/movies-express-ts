@@ -34,7 +34,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const movieToAdd = controller.bodyToMovie(req.body);
+  const movieToAdd: Movie = controller.bodyToMovie(req.body);
   if (!movieToAdd) {
     res.send({ message: 'Oops, an error has ocurred while adding new movie.', }, 400);
     return true ;
