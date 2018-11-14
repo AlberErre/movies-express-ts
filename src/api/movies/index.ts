@@ -1,27 +1,27 @@
-import { Movie } from "../../models/model";
+import { Movie } from '../../models/model';
 
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const controller = require("./controllers");
+const controller = require('./controllers');
 
-router.get("/", (req, res) => {
+router.get('/', (req, res) => {
 	let movies = controller.getMovies();
 	res.json(movies);
 });
 
-router.get("/likes", (req, res) => {
+router.get('/likes', (req, res) => {
 	let likedMovies = controller.getLikes();
 
 	if (likedMovies.length > 0) {
 		res.json(likedMovies);
 	} else {
 		res.status(200).send({
-			message: "Nobody has liked any movie yet. Try again in the future."
+			message: 'Nobody has liked any movie yet. Try again in the future.'
 		});
 	}
 });
 
-router.get("/:id", (req, res) => {
+router.get('/:id', (req, res) => {
 	let movieById = controller.findMovieById(req.params.id);
 
 	if (movieById !== undefined) {
@@ -35,26 +35,26 @@ router.get("/:id", (req, res) => {
 	}
 });
 
-router.post("/", (req, res) => {
+router.post('/', (req, res) => {
 	const movieToAdd = controller.bodyToMovie(req.body);
 	if (!movieToAdd) {
-		console.log("as");
+		console.log('as');
 		// res.send({ message: 'Oops, an error has ocurred while adding new movie.', }, 400);
 		// res.send({ message: 'Oops, an error has ocurred while adding new movie.', }, 400);
 		return true;
 	}
 	controller.addMovie(movieToAdd);
-	res.json({ message: "New Movie added!", movieToAdd });
+	res.json({ message: 'New Movie added!', movieToAdd });
 });
 
-router.put("/:id", (req, res) => {
+router.put('/:id', (req, res) => {
 	let movieToUpdate: Movie = controller.updateMovie(req.params.id, req.body);
 
 	if (!movieToUpdate) {
 		res.status(400).send({
-      message: "Oops, an error has ocurred while updating movie."
-    });
-    return;
+			message: 'Oops, an error has ocurred while updating movie.'
+		});
+		return;
 	}
 	res.json({
 		message: `Movie ${req.params.id} has been updated!`,
@@ -62,7 +62,7 @@ router.put("/:id", (req, res) => {
 	});
 });
 
-router.delete("/:id", (req, res) => {
+router.delete('/:id', (req, res) => {
 	controller.deleteMovie(req.params.id);
 	res.status(200).send({
 		message: `Movie (id: ${req.params.id}) has been deleted!`
@@ -70,7 +70,7 @@ router.delete("/:id", (req, res) => {
 
 	// if (movieIsDeleted === false) {
 	//     res.status(400).send({
-	//         message: "Sorry, the movie you're trying to delete does not exist."
+	//         message: 'Sorry, the movie you're trying to delete does not exist.'
 	//     });
 	// } else {
 	//     res.status(200).send({
@@ -79,12 +79,12 @@ router.delete("/:id", (req, res) => {
 	// }
 });
 
-router.put("/likes/:id", (req, res) => {
+router.put('/likes/:id', (req, res) => {
 	let result = controller.likeMovie(req.params.id);
 
 	if (result === false) {
 		res.status(400).send({
-			message: "Sorry, you cannot like a movie that does not exist."
+			message: 'Sorry, you cannot like a movie that does not exist.'
 		});
 	} else {
 		res.status(200).send({
@@ -93,12 +93,12 @@ router.put("/likes/:id", (req, res) => {
 	}
 });
 
-router.delete("/likes/:id", (req, res) => {
+router.delete('/likes/:id', (req, res) => {
 	let result = controller.dislikeMovie(req.params.id);
 
 	if (result === false) {
 		res.status(400).send({
-			message: "Sorry, you cannot dislike a movie that does not exist."
+			message: 'Sorry, you cannot dislike a movie that does not exist.'
 		});
 	} else {
 		res.status(200).send({
