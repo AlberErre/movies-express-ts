@@ -110,6 +110,6 @@
       "allow-pascal-case",
       "allow-leading-underscore"
     ],
-    "jsx-no-lambda": false,
+    "jsx-no-lambda": false
   }
 }
