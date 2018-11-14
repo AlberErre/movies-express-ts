@@ -35,7 +35,7 @@ function updateMovie(id, movieToUpdate) {
 }
 
 function deleteMovie(idToRemove: string) {
-  const movieToDelete = findMovieById(idToRemove);
+  const movieToDelete: Movie = findMovieById(idToRemove);
   if (movieToDelete) {
     pull(movies, movieToDelete);
   }
