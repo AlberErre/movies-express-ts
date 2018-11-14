@@ -22,7 +22,7 @@ export function addMovie(newMovie: Movie) {
   movies.push(newMovie);
 }
 
-function updateMovie(id, movieToUpdate) {
+export function updateMovie(id, movieToUpdate) {
   if (bodyIsNotEmpty(movieToUpdate)) {
     const moviePosition = movies.findIndex(movie => movie.id === id);
     if (moviePosition >= 0) {
