@@ -1,4 +1,5 @@
 import { Movie } from '../../models/model';
+import { bodyIsEmpty } from '../../utils/utils';
 
 const express = require('express');
 const router = express.Router();
@@ -34,13 +35,16 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const movieToAdd: Movie = controller.bodyToMovie(req.body);
-  if (!movieToAdd) {
-    res.send({ message: 'Oops, an error has ocurred while adding new movie.', }, 400);
-    return true ;
+  if (!bodyIsEmpty(req.body)){
+    const movieToAdd: Movie = controller.bodyToMovie(req.body);
+    if (!movieToAdd) {
+      res.send({ message: 'Oops, an error has ocurred while adding new movie.', }, 400);
+      return true ;
+    }
+    controller.addMovie(movieToAdd);
+    res.json({ message: 'New Movie added!', movieToAdd });
   }
-  controller.addMovie(movieToAdd);
-  res.json({ message: 'New Movie added!', movieToAdd });
+  res.json({ message: 'Body is empty'})
 });
 
 router.put('/:id', (req, res) => {
