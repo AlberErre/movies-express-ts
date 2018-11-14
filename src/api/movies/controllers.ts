@@ -22,15 +22,14 @@ export function addMovie(newMovie: Movie) {
   movies.push(newMovie);
 }
 
-export function updateMovie(id, movieToUpdate) {
+export function updateMovie(id: string, movieToUpdate: Movie): Movie {
   if (bodyIsNotEmpty(movieToUpdate)) {
-    const moviePosition = movies.findIndex(movie => movie.id === id);
+    const moviePosition: number = movies.findIndex(movie => movie.id === id);
     if (moviePosition >= 0) {
       movies[moviePosition] = movieToUpdate;
       return movies[moviePosition];
     }
-  } else {
-    return false;
+  return;
   }
 }
 
