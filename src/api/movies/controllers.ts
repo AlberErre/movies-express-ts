@@ -50,7 +50,7 @@ function getLikes() : Movie[] {
 }
 
 function likeMovie(id) {
-  if (!findMovieById(movies, id)) {
+  if (!findMovieById(id)) {
     return false;
   } else {
     const likedMovie = movies.find(movie => movie.id === id);
@@ -60,7 +60,7 @@ function likeMovie(id) {
 }
 
 function dislikeMovie(id) {
-  if (!findMovieById(movies, id)) {
+  if (!findMovieById(id)) {
     return false;
   } else {
     const dislikedMovie = movies.find(movie => movie.id === id);
