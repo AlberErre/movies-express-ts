@@ -1,0 +1,42 @@
+[
+  {
+    "id": "0",
+    "name": "Harry Potter and the Prisoner of Azkaban",
+    "year": 2004,
+    "genre": "fantasy",
+    "director": "Alfonso Cuaron",
+    "description": "Its Harrys third year at Hogwarts",
+    "nsfw": false,
+    "like": false
+  },
+  {
+    "id": "1",
+    "name": "Avatar",
+    "year": 2009,
+    "genre": "fantasy",
+    "director": "James Cameron",
+    "description": "A paraplegic marine dispatched to the moon",
+    "nsfw": false,
+    "like": false
+  },
+  {
+    "id": "2",
+    "name": "Interstellar",
+    "year": 2014,
+    "genre": "science",
+    "director": "Christopher Nolan",
+    "description": "Dystopian future where humanity is struggling to survive",
+    "nsfw": false,
+    "like": false
+  },
+  {
+    "id": "3",
+    "name": "Inside Out",
+    "year": 2015,
+    "genre": "animation",
+    "director": "Pete Docter",
+    "description": "Riley emotions: Joy, Fear, Anger, Disgust and Sadness",
+    "nsfw": false,
+    "like": false
+  }
+]
