@@ -1,5 +1,5 @@
-# movies-express-js 💻
-Simple movie REST API using NodeJS & Express 🔥
+# movies-express-ts 💻🍿
+Simple movie REST API using NodeJS, TypeScript & Express 🔥
 
 ```
 GET 
@@ -15,8 +15,17 @@ npm run start
 open http://localhost:3001/
 ``` 
 
-## Nodemon Server
+## ts-node Server
 ```
 npm run dev 
 open http://localhost:3001/
+``` 
+
+## Try it out 🔧
+```
+Hello:
+GET http://localhost:3001/
+
+Movie List:
+GET http://localhost:3001/movies
 ``` 
