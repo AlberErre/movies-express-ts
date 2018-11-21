@@ -4,7 +4,7 @@
   "description": "REST API to manage movies",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js",
+    "start": "node server.js",
     "dev": "ts-node server.ts",
     "lint": "tslint -p tsconfig.json"
   },
