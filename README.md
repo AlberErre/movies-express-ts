@@ -11,12 +11,6 @@ DELETE
 ## QuickStart
 ```
 npm install
-npm run start 
-open http://localhost:3001/
-``` 
-
-## ts-node Server
-```
 npm run dev 
 open http://localhost:3001/
 ``` 
